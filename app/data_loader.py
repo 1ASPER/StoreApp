@@ -82,5 +82,4 @@ except Exception as e:
     connection.close()
     raise
 
-
 connection.close()
