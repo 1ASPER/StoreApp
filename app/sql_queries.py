@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS products
 (
     product_id      INTEGER PRIMARY KEY,
     name            TEXT, 
-    price           TEXT
+    price           INTEGER
 )
 """
 

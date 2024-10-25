@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Analytics{% endblock %}
+
+{% block content %}
+<h1>Store sales analitycs<h1>
+
+<form method="POST">
+    <label for="store_filter">Store:</label>
+    <select name="store_filter" id="store_filter">
+        <option value="">All</option>
+        {% for store in stores %}
+            <option value="{{ store['name'] }}">{{ store['name'] }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="product_filter">Product:</label>
+    <select name="product_filter" id="product_filter">
+        <option value="">All</option>
+        {% for product in products %}
+            <option value="{{ product['name'] }}">{{ product['name'] }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="start_date">Start Date:</label>
+    <input type="date" name="start_date" id="start_date">
+
+    <label for="end_date">End Date:</label>
+    <input type="date" name="end_date" id="end_date">
+
+    <button type="submit">Filter</button>
+</form>
+
+<h2>Total Quantity Sold: {{ total_quantity }}</h2>
+<h2>Total Amount: {{ total_amount }}</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Store Name</th>
+            <th>Quantity Sold</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for sale in sales_data %}
+            <tr>
+                <td>{{ sale['date'] }}</td>
+                <td>{{ sale['store_name'] }}</td>
+                <td>{{ sale['quantity'] }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
