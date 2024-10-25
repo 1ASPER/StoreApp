@@ -171,10 +171,8 @@ cython_debug/
 *.tmp
 
 # Data folder
-.data/*
-.database/*
-
-
+data/*
+database/*
 
 # SQLite3 database
 *.sqlite
@@ -182,3 +180,6 @@ cython_debug/
 
 # Configuration
 config.py
+
+# Task from SUBAN AGAI
+TO_DO.ipynb
