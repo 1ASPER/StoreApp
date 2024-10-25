@@ -160,3 +160,25 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+# VScode extensions
+.vscode/
+
+# Logs and temporary files
+*.log
+*.csv~
+*.csv
+*.tmp
+
+# Data folder
+.data/*
+.database/*
+
+
+
+# SQLite3 database
+*.sqlite
+*.db
+
+# Configuration
+config.py
