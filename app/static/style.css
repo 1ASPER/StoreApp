@@ -148,4 +148,221 @@ tfoot {
     font-weight: bold;
 }
 
+.filter-form {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.filter-group label {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.filter-group select,
+.filter-group input[type="date"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.filter-button {
+    padding: 0.7rem 1.5rem;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    align-self: end;
+}
+
+.filter-button:hover {
+    background-color: #45a049;
+}
+
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 1rem;
+}
+
+.sales-table th,
+.sales-table td {
+    padding: 0.8rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.sales-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.sales-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.sales-table tr:hover {
+    background-color: #ddd;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.multiselect {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+    align-self: center;
+}
+
+.filter-btn:hover {
+    background-color: #45a049;
+}
+
+.totals {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.total {
+    flex: 1;
+    background-color: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.total h2 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.total p {
+    font-size: 1.8em;
+    margin: 10px 0 0;
+    color: #1976D2;
+}
+
+.table-header {
+    display: flex;
+    justify-content:space-around;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.column-header {
+    text-align: center;
+    font-weight: bold;
+}
+.table-container {
+    overflow-x: auto;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sales-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sales-table th, .sales-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.sales-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.sales-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.sales-table td {
+    color: #555;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+@media (max-width: 768px) {
+    .filter-form {
+        flex-direction: column;
+    }
+    
+    .totals {
+        flex-direction: column;
+    }
+}
+
+
+
 

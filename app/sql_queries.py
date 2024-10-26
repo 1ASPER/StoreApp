@@ -34,3 +34,11 @@ CREATE TABLE IF NOT EXISTS sales
 insert_stores_query = "INSERT INTO stores VALUES (?, ?, ?)"
 insert_products_query = "INSERT INTO products VALUES (?, ?, ?, ?)"
 insert_sales_query = "INSERT INTO sales VALUES (?, ?, ?, ?, ?)"
+
+selectmany_query = """
+    SELECT sales.date, stores.name AS store_name, sales.quantity, products.price 
+    FROM sales
+    JOIN stores   ON sales.store_id   = stores.store_id
+    JOIN products ON sales.product_id = products.product_id
+    WHERE 1=1
+"""

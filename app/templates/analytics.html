@@ -3,54 +3,90 @@
 {% block title %}Analytics{% endblock %}
 
 {% block content %}
-<h1>Store sales analitycs<h1>
 
-<form method="POST">
-    <label for="store_filter">Store:</label>
-    <select name="store_filter" id="store_filter">
-        <option value="">All</option>
-        {% for store in stores %}
-            <option value="{{ store['name'] }}">{{ store['name'] }}</option>
-        {% endfor %}
-    </select>
+<h1>Store Sales Analytics</h1>
 
-    <label for="product_filter">Product:</label>
-    <select name="product_filter" id="product_filter">
-        <option value="">All</option>
-        {% for product in products %}
-            <option value="{{ product['name'] }}">{{ product['name'] }}</option>
-        {% endfor %}
-    </select>
+<!-- Форма фильтров -->
+<form method="POST" class="filter-form">
+    <div class="filter-group">
+        <label for="store_filter">Store:</label>
+        <div class="dropdown">
+            <select name="store_filter" id="store_filter" multiple class="multiselect">
+                {% for store in stores %}
+                    <option value="{{ store[1] }}" {% if store[1] in store_filter %}selected{% endif %}>{{ store[1] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    
+    <div class="filter-group">
+        <label for="product_filter">Product:</label>
+        <div class="dropdown">
+            <select name="product_filter" id="product_filter" multiple class="multiselect">
+                {% for product in products %}
+                    <option value="{{ product[1] }}" {% if product[1] in product_filter %}selected{% endif %}>{{ product[1] }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
 
-    <label for="start_date">Start Date:</label>
-    <input type="date" name="start_date" id="start_date">
+    <br></br>
 
-    <label for="end_date">End Date:</label>
-    <input type="date" name="end_date" id="end_date">
+    <div class="filter-group">
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" id="start_date" value="{{ start_date }}">
+    </div>
+    
+    <div class="filter-group">
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date" value="{{ end_date }}">
+    </div>
 
-    <button type="submit">Filter</button>
+    <button type="submit" class="filter-btn">Apply</button>
+
+
+
+    <br></br>
+
 </form>
 
-<h2>Total Quantity Sold: {{ total_quantity }}</h2>
-<h2>Total Amount: {{ total_amount }}</h2>
 
-<table>
-    <thead>
-        <tr>
-            <th>Date</th>
-            <th>Store Name</th>
-            <th>Quantity Sold</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for sale in sales_data %}
-            <tr>
-                <td>{{ sale['date'] }}</td>
-                <td>{{ sale['store_name'] }}</td>
-                <td>{{ sale['quantity'] }}</td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
+
+
+<br></br>
+<div class="totals">
+    <div class="total">
+        <h2>Total Quantity Sold:</h2>
+        <p>{{ total_quantity }}</p>
+    </div>
+    <div class="total">
+        <h2>Total Amount:</h2>
+        <p>{{ total_amount }}</p>
+    </div>
+</div>
+
+
+<br></br>
+
+<div class="table-header">
+    <div class="column-header">Date</div>
+    <div class="column-header">Store</div>
+    <div class="column-header">Quantity</div>
+</div>
+
+<!-- Таблица данных -->
+<div class="table-container">
+    <table class="sales-table">
+        <tbody>
+            {% for sale in sales_data %}
+                <tr>
+                    <td>{{ sale[0] }}</td>
+                    <td>{{ sale[1] }}</td>
+                    <td>{{ sale[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}
