@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from .config import Config
-from sql_queries import selectmany_query
+from .sql_queries import selectmany_query, groupby_query
 import sqlite3
 
 def create_app() -> Flask.wsgi_app:
@@ -68,8 +68,6 @@ def create_app() -> Flask.wsgi_app:
 
         total_quantity = sum(int(sale[2]) for sale in sales)
         total_amount = sum(int(sale[2]) * int(sale[3]) for sale in sales)
-
-        conn.close()
 
         return render_template( 'analytics.html',
             sales_data=sales,

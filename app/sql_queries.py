@@ -42,3 +42,12 @@ selectmany_query = """
     JOIN products ON sales.product_id = products.product_id
     WHERE 1=1
 """
+
+groupby_query = """
+    SELECT sales.date, stores.name, SUM(sales.quantity) AS total_quantity
+    FROM sales
+    JOIN stores ON sales.store_id = stores.store_id
+    WHERE stores.name IN ({})
+    AND sales.date BETWEEN ? AND ?
+    GROUP BY sales.date, stores.name
+"""

@@ -74,7 +74,6 @@
     <div class="column-header">Quantity</div>
 </div>
 
-<!-- Таблица данных -->
 <div class="table-container">
     <table class="sales-table">
         <tbody>
@@ -83,6 +82,25 @@
                     <td>{{ sale[0] }}</td>
                     <td>{{ sale[1] }}</td>
                     <td>{{ sale[2] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<div class="table-header">
+    <div class="column-header">Date</div>
+    <div class="column-header">Store</div>
+    <div class="column-header">Total Quantity Sold</div>
+</div>
+<div class="table-container">
+    <table class="sales-table">
+        <tbody>
+            {% for grouped_sale in grouped_sales_data %}
+                <tr>
+                    <td>{{ grouped_sale[0] }}</td>
+                    <td>{{ grouped_sale[1] }}</td>
+                    <td>{{ grouped_sale[2] }}</td>
                 </tr>
             {% endfor %}
         </tbody>

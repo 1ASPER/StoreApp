@@ -165,21 +165,21 @@ cython_debug/
 .vscode/
 
 # Logs and temporary files
-*.log
-*.csv~
-*.csv
-*.tmp
+# *.log
+# *.csv~
+# *.csv
+# *.tmp
 
 # Data folder
-data/*
-database/*
+# data/*
+# database/*
 
 # SQLite3 database
-*.sqlite
-*.db
+# *.sqlite
+# *.db
 
 # Configuration
-config.py
+# config.py
 
 # Task from SUBAN AGAI
 TO_DO.ipynb
